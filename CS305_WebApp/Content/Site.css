@@ -135,6 +135,7 @@ textarea {
         font-size: 63px !important;
     }
 }
-	
-
+ul {
+    list-style: none;
+}
 
