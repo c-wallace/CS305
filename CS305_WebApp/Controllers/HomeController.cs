@@ -15,7 +15,7 @@ namespace CS305_WebApp.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Your search page.";
 
             return View();
         }

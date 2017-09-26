@@ -405,15 +405,15 @@ p {
 }
 
 .lead {
-  margin-bottom: 20px;
-  font-size: 16.099999999999998px;
+  margin-bottom: 10px;
+  font-size: 16px;
   font-weight: 200;
-  line-height: 1.4;
+  line-height: 1.0;
 }
 
 @media (min-width: 768px) {
   .lead {
-    font-size: 21px;
+    font-size: 16px;
   }
 }
 
@@ -2296,7 +2296,7 @@ fieldset[disabled] .btn-info.active {
 
 .btn-link {
   font-weight: normal;
-  color: #428bca;
+  color: #ffffff;
   cursor: pointer;
   border-radius: 0;
 }
@@ -4929,25 +4929,31 @@ a.list-group-item.active > .badge,
 
 .jumbotron {
   padding: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 150px;
   font-size: 21px;
   font-weight: 200;
   line-height: 2.1428571435;
   color: inherit;
-  background-color: #eeeeee;
+  background-color: #f0fff0;
+  width: 100%;
+  text-align:center;
 }
 
 .jumbotron h1 {
   line-height: 1;
   color: inherit;
+  text-align: center;
 }
 
 .jumbotron p {
   line-height: 1.4;
+  text-align: center;
 }
 
 .container .jumbotron {
   border-radius: 6px;
+  width: 100%;
+
 }
 
 @media screen and (min-width: 768px) {
