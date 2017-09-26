@@ -1,0 +1,22 @@
+﻿@model CS305_WebApp.Models.RosterModel
+@{
+    ViewBag.Title = "Roster";
+}
+
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+@Html.ValidationSummary("", new { @class = "text-danger" })
+<div class="form-group">
+    @Html.LabelFor(m => m.name, new { @class = "col-md-2 control-label" })
+    <div class="col-md-10">
+        @Html.TextBoxFor(m => m.name, new { @class = "form-control" })
+    </div>
+</div>
+<br/>
+<div class="form-group">
+    @Html.LabelFor(m => m.description, new { @class = "col-md-2 control-label" })
+    <div class="col-md-10">
+        @Html.TextBoxFor(m => m.description, new { @class = "form-control" })
+    </div>
+</div>

@@ -26,5 +26,11 @@ namespace CS305_WebApp.Controllers
 
             return View();
         }
+
+        public ActionResult Roster()
+        {
+            ViewBag.Message = "Your roster page.";
+            return View();
+        }
     }
 }

@@ -4927,7 +4927,7 @@ a.list-group-item.active > .badge,
   margin-left: 3px;
 }
 
-.jumbotron {
+/*.jumbotron {
   padding: 30px;
   margin-bottom: 150px;
   font-size: 21px;
@@ -4967,7 +4967,7 @@ a.list-group-item.active > .badge,
   .jumbotron h1 {
     font-size: 63px;
   }
-}
+}*/
 
 .thumbnail {
   display: inline-block;
