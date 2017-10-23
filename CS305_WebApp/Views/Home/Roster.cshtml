@@ -4,19 +4,34 @@
 }
 
 <h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<!--<h3>@ViewBag.Message</h3>-->
+<p>
+    @Html.ActionLink("List", "Index", "Roster")
+</p>
 
 @Html.ValidationSummary("", new { @class = "text-danger" })
+@using (Html.BeginForm("Add", "Roster", FormMethod.Post, new { @class = "form" }))
+{
 <div class="form-group">
-    @Html.LabelFor(m => m.name, new { @class = "col-md-2 control-label" })
+    @Html.LabelFor(m => m.Firstname, new { @class = "col-md-2 control-label" })
     <div class="col-md-10">
-        @Html.TextBoxFor(m => m.name, new { @class = "form-control" })
+        @Html.TextBoxFor(m => m.Firstname, new { @class = "form-control" })
     </div>
 </div>
-<br/>
+<br />
+<div class="form-group">
+    @Html.LabelFor(m => m.Lastname, new { @class = "col-md-2 control-label" })
+    <div class="col-md-10">
+        @Html.TextBoxFor(m => m.Lastname, new { @class = "form-control" })
+    </div>
+</div>
+<br />
 <div class="form-group">
     @Html.LabelFor(m => m.description, new { @class = "col-md-2 control-label" })
     <div class="col-md-10">
         @Html.TextBoxFor(m => m.description, new { @class = "form-control" })
     </div>
 </div>
+
+<input type="submit" class="btn btn-primary" value="Save" />
+}

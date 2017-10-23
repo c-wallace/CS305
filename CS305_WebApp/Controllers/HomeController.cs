@@ -13,7 +13,7 @@ namespace CS305_WebApp.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Search()
         {
             ViewBag.Message = "Your search page.";
 

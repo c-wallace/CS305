@@ -1,0 +1,24 @@
+﻿@model CS305_WebApp.Models.RosterModel
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<p>
+    Are you sure you would like to delete this entry>
+</p>
+
+<u1>
+    <li>First Name: @Model.Firstname</li>
+    <li>Last Name: @Model.Lastname</li>
+    <li>Description: @Model.description</li>
+</u1>
+
+@using (Html.BeginForm("DoDelete", "Roster", FormMethod.Post))
+{
+    @Html.HiddenFor(r => r.ID)
+    <input type="submit" class="btn btn-danger" values="Yes, Delete it"/>
+    @Html.ActionLink("No, back to Roster", "Index")
+}
