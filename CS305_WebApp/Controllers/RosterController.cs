@@ -7,6 +7,7 @@ using CS305_WebApp.Models;
 
 namespace CS305_WebApp.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class RosterController : Controller
     {
         private ApplicationDbContext _dbContext;

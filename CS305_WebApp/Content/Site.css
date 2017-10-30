@@ -39,6 +39,19 @@
     white-space: normal;
 }
 
+.lead {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 1.0;
+}
+
+@media (min-width: 768px) {
+    .lead {
+        font-size: 16px;
+    }
+}
+
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
@@ -46,23 +59,28 @@ textarea {
     max-width: 280px;
 }
 
-.tfheader{
-	/*background-color:#c3dfef;*/
+.tfheader {
+    /*background-color:#c3dfef;*/
+    float: left;
+    position: relative;
+    left: 30%;
 }
 .tfnewsearch{
 	float:left;
 }
-.tftextinput{
-	margin: 0;
-	padding: 5px 15px;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size:14px;
-	border:1px solid #0076a3; border-right:0px;
-	border-top-left-radius: 5px 5px;
-	border-bottom-left-radius: 5px 5px;
+.tftextinput {
+    margin: auto;
+    padding: 5px 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    border: 1px solid #0076a3;
+    border-right: 0px;
+    border-top-left-radius: 5px 5px;
+    border-bottom-left-radius: 5px 5px;
+    width:250px;
 }
 .tfbutton {
-    margin: 0;
+    margin: auto;
     padding: 5px 15px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
