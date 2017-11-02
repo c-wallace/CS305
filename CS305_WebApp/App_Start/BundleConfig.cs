@@ -24,7 +24,7 @@ namespace CS305_WebApp
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap-spaceland.css",
                       "~/Content/site.css"));
         }
     }
