@@ -91,9 +91,9 @@ textarea {
     color: #ffffff;
     border: solid 1px #0076a3;
     border-right: 0px;
-    background: #191970;
-    /*background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
-    background: -moz-linear-gradient(top, #00adee, #0078a5);*/
+    /*ackground: #191970;*/
+    background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+    background: -moz-linear-gradient(top, #00adee, #0078a5);
     border-top-right-radius: 5px 5px;
     border-bottom-right-radius: 5px 5px;
 }
@@ -114,7 +114,7 @@ textarea {
 .jumbotron {
     padding: 30px !important;
     margin-bottom: 150px !important;
-    font-size: 21px !important;
+    /*font-size: 21px !important;*/
     font-weight: 200 !important;
     line-height: 2.1428571435 !important;
     color: inherit !important;
@@ -153,6 +153,7 @@ textarea {
         font-size: 63px !important;
     }
 }
+
 ul {
     list-style: none;
 }
