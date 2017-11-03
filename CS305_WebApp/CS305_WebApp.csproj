@@ -274,6 +274,8 @@
     <Content Include="Views\Home\Roster.cshtml" />
     <Content Include="Views\Roster\Index.cshtml" />
     <Content Include="Views\Roster\Delete.cshtml" />
+    <Content Include="Views\Roster\_RosterForm.cshtml" />
+    <Content Include="Views\Roster\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

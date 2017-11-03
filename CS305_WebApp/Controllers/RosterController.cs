@@ -59,7 +59,12 @@ namespace CS305_WebApp.Controllers
         // GET: Roster/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var roster = _dbContext.Roster.SingleOrDefault(v => v.ID == id);
+
+            if (roster == null)
+                return HttpNotFound();
+
+            return View(roster);
         }
 
         // POST: Roster/Edit/5
@@ -76,6 +81,21 @@ namespace CS305_WebApp.Controllers
             {
                 return View();
             }
+        }
+        [HttpPost]
+        public ActionResult Update(RosterModel roster)
+        {
+            var rosterInDb = _dbContext.Roster.SingleOrDefault(v => v.ID == roster.ID);
+
+            if (rosterInDb == null)
+                return HttpNotFound();
+
+            rosterInDb.Firstname = roster.Firstname;
+            rosterInDb.Lastname = roster.Lastname;
+            rosterInDb.description = roster.description;
+            _dbContext.SaveChanges();
+
+            return RedirectToAction("Index");
         }
 
         // GET: Roster/Delete/5
