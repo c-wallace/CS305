@@ -31,8 +31,8 @@
                 <td>
 
                     @Html.ActionLink("Edit", "Edit", new { id = roster.ID }) |
-
-                    @Html.ActionLink("Delete", "Delete", new { id = roster.ID })
+                    <!--, new { onClick = "retrun confirm('Are you sure you want to delete this user: "+ roster.Firstname +""+"');"}-->
+                    @Html.ActionLink("Delete", "DoDelete", new { id = roster.ID }, new { onclick = "return confirm('Are you sure you want to delete this user: " + roster.Firstname + "" + "');" })
                 </td>
                 <td>
                     @roster.Firstname

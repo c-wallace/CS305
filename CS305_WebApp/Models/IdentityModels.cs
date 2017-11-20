@@ -21,6 +21,8 @@ namespace CS305_WebApp.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<RosterModel> Roster { get; set; }
+        public DbSet<ProgramModel> programs { get; set; }
+        public DbSet<Keywords> keyword { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

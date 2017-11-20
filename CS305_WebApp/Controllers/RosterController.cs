@@ -109,7 +109,7 @@ namespace CS305_WebApp.Controllers
         }
 
         // POST: Roster/Delete/5
-        [HttpPost]
+        
         public ActionResult Delete(int id, FormCollection collection)
         {
             try
@@ -123,7 +123,7 @@ namespace CS305_WebApp.Controllers
                 return View();
             }
         }
-        [HttpPost]
+        
         public ActionResult DoDelete(int id)
         {
             var roster = _dbContext.Roster.SingleOrDefault(r => r.ID == id);

@@ -193,6 +193,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RosterController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -204,8 +205,30 @@
     <Compile Include="Migrations\201710212313406_AddRosterTable.Designer.cs">
       <DependentUpon>201710212313406_AddRosterTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711201922295_ProgramModel.cs" />
+    <Compile Include="Migrations\201711201922295_ProgramModel.Designer.cs">
+      <DependentUpon>201711201922295_ProgramModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711201942194_ProgramsTable.cs" />
+    <Compile Include="Migrations\201711201942194_ProgramsTable.Designer.cs">
+      <DependentUpon>201711201942194_ProgramsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711201943531_keywordsTable.cs" />
+    <Compile Include="Migrations\201711201943531_keywordsTable.Designer.cs">
+      <DependentUpon>201711201943531_keywordsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711202054583_phone.cs" />
+    <Compile Include="Migrations\201711202054583_phone.Designer.cs">
+      <DependentUpon>201711202054583_phone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711202149337_program.cs" />
+    <Compile Include="Migrations\201711202149337_program.Designer.cs">
+      <DependentUpon>201711202149337_program.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Keywords.cs" />
+    <Compile Include="Models\ProgramModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\RosterModel.cs" />
@@ -279,6 +302,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Search\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -299,6 +323,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710212313406_AddRosterTable.resx">
       <DependentUpon>201710212313406_AddRosterTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711201922295_ProgramModel.resx">
+      <DependentUpon>201711201922295_ProgramModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711201942194_ProgramsTable.resx">
+      <DependentUpon>201711201942194_ProgramsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711201943531_keywordsTable.resx">
+      <DependentUpon>201711201943531_keywordsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711202054583_phone.resx">
+      <DependentUpon>201711202054583_phone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711202149337_program.resx">
+      <DependentUpon>201711202149337_program.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
