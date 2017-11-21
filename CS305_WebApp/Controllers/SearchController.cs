@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CS305_WebApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +10,36 @@ namespace CS305_WebApp.Controllers
     public class SearchController : Controller
     {
         // GET: Search
+        private ApplicationDbContext _dbContext;
+        private ProgramsDBContext db = new ProgramsDBContext();
+        public SearchController()
+        {
+            _dbContext = new ApplicationDbContext();
+        }
         public ActionResult Index(string searchString)
         {
-            return View();
+            var pro = from p in _dbContext.programs
+                      select p;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                pro = pro.Where(s => s.name.Contains(searchString));
+            }
+
+            return View(pro);
+        }
+        [HttpGet]
+        public ActionResult Search(string searchString)
+        {
+            var pro = from p in _dbContext.programs
+                      select p;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                pro = pro.Where(s => s.name.Contains(searchString));
+            }
+
+            return RedirectToAction("Index", pro);
         }
 
         // GET: Search/Details/5

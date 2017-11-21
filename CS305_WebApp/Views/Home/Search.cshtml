@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<CS305_WebApp.Models.ProgramModel>
+@{
     ViewBag.Title = "";
 }
 <h2>@ViewBag.Title</h2>
@@ -7,12 +8,19 @@
 <div class="jumbotron">
     <p>This will essentially be the search page, the search screen will show up after a user or admin logs in</p>
     <p>Right now the search bar just searches through google it will be linked to a database</p>
-
-    <div class="tfheader">
+    @using (Html.BeginForm("Index","Search", FormMethod.Get))
+    {
+        <p>
+            Title: @Html.TextBox("SearchString") <br />
+           <input type="submit" value="search" class="tfbutton">
+        </p>
+    }
+    
+<!--    <div class="tfheader">
         <form class="tfnewsearch" method="get" action="http://www.google.com">
             <input type="text" class="tftextinput" name="q" size="21" maxlength="120"><input type="submit" value="search" class="tfbutton">
         </form>
         <div class="tfclear"></div>
-    </div>
+    </div>-->
 </div>
 
