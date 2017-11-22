@@ -44,6 +44,13 @@ namespace CS305_WebApp.Controllers
             return RedirectToAction("Index", pro);
         }
 
+        public ActionResult Add(ProgramModel program)
+        {
+            _dbContext.programs.Add(program);
+            _dbContext.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
         // GET: Search/Details/5
         public ActionResult Details(int id)
         {
