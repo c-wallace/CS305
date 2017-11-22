@@ -225,6 +225,14 @@
     <Compile Include="Migrations\201711202149337_program.Designer.cs">
       <DependentUpon>201711202149337_program.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711212335485_keyword column.cs" />
+    <Compile Include="Migrations\201711212335485_keyword column.Designer.cs">
+      <DependentUpon>201711212335485_keyword column.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711220054122_help.cs" />
+    <Compile Include="Migrations\201711220054122_help.Designer.cs">
+      <DependentUpon>201711220054122_help.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Keywords.cs" />
@@ -338,6 +346,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711202149337_program.resx">
       <DependentUpon>201711202149337_program.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711212335485_keyword column.resx">
+      <DependentUpon>201711212335485_keyword column.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711220054122_help.resx">
+      <DependentUpon>201711220054122_help.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

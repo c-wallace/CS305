@@ -23,7 +23,9 @@ namespace CS305_WebApp.Controllers
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                pro = pro.Where(s => s.name.Contains(searchString));
+                pro = pro.Where(s => s.keyword.Contains(searchString));
+                   
+                
             }
 
             return View(pro);
