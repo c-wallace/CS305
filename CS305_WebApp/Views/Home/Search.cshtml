@@ -11,8 +11,8 @@
     @using (Html.BeginForm("Index","Search", FormMethod.Get))
     {
         <p>
-            Title: @Html.TextBox("SearchString") <br />
-           <input type="submit" value="search" class="tfbutton">
+            @Html.TextBox("SearchString")
+           <input type="submit" value="search" onclick="@("window.location.href='" + @Url.Action("Index", "Search") + "'");"  class="tfbutton">
         </p>
     }
     

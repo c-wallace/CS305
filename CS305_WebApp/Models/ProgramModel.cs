@@ -22,10 +22,7 @@ namespace CS305_WebApp.Models
         [Required]
         public string keyword { get; set; }
         public string webpage { get; set; }
-        public virtual ICollection<Keywords> keywords { get; set; }
+
     }
-    public class ProgramsDBContext : DbContext
-    {
-        public DbSet<ProgramModel> programs { get; set; }
-    }
+
 }

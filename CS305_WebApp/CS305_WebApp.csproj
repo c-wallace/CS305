@@ -237,9 +237,36 @@
     <Compile Include="Migrations\201711220250372_webpage column.Designer.cs">
       <DependentUpon>201711220250372_webpage column.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711271648099_needed.cs" />
+    <Compile Include="Migrations\201711271648099_needed.Designer.cs">
+      <DependentUpon>201711271648099_needed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711271706089_needed1.cs" />
+    <Compile Include="Migrations\201711271706089_needed1.Designer.cs">
+      <DependentUpon>201711271706089_needed1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711271719288_needed2.cs" />
+    <Compile Include="Migrations\201711271719288_needed2.Designer.cs">
+      <DependentUpon>201711271719288_needed2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711272014026_requiredFieldGone.cs" />
+    <Compile Include="Migrations\201711272014026_requiredFieldGone.Designer.cs">
+      <DependentUpon>201711272014026_requiredFieldGone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711272021364_requiredField.cs" />
+    <Compile Include="Migrations\201711272021364_requiredField.Designer.cs">
+      <DependentUpon>201711272021364_requiredField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711272033028_requiredField1.cs" />
+    <Compile Include="Migrations\201711272033028_requiredField1.Designer.cs">
+      <DependentUpon>201711272033028_requiredField1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711291633273_clearedTable.cs" />
+    <Compile Include="Migrations\201711291633273_clearedTable.Designer.cs">
+      <DependentUpon>201711291633273_clearedTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Keywords.cs" />
     <Compile Include="Models\ProgramModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -312,6 +339,7 @@
     <Content Include="Views\Roster\_RosterForm.cshtml" />
     <Content Include="Views\Roster\Edit.cshtml" />
     <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\Search\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -359,6 +387,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711220250372_webpage column.resx">
       <DependentUpon>201711220250372_webpage column.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711271648099_needed.resx">
+      <DependentUpon>201711271648099_needed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711271706089_needed1.resx">
+      <DependentUpon>201711271706089_needed1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711271719288_needed2.resx">
+      <DependentUpon>201711271719288_needed2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711272014026_requiredFieldGone.resx">
+      <DependentUpon>201711272014026_requiredFieldGone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711272021364_requiredField.resx">
+      <DependentUpon>201711272021364_requiredField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711272033028_requiredField1.resx">
+      <DependentUpon>201711272033028_requiredField1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711291633273_clearedTable.resx">
+      <DependentUpon>201711291633273_clearedTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

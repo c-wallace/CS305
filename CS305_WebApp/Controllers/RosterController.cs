@@ -21,6 +21,7 @@ namespace CS305_WebApp.Controllers
             var roster = _dbContext.Roster.ToList();
             return View(roster);
         }
+
         //Roster add method
         public ActionResult Add(RosterModel roster)
         {

@@ -1,6 +1,8 @@
 ﻿using CS305_WebApp.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -11,7 +13,7 @@ namespace CS305_WebApp.Controllers
     {
         // GET: Search
         private ApplicationDbContext _dbContext;
-        private ProgramsDBContext db = new ProgramsDBContext();
+ 
         public SearchController()
         {
             _dbContext = new ApplicationDbContext();
@@ -43,12 +45,27 @@ namespace CS305_WebApp.Controllers
 
             return RedirectToAction("Index", pro);
         }
-
+       
         public ActionResult Add(ProgramModel program)
         {
             _dbContext.programs.Add(program);
-            _dbContext.SaveChanges();
-            return RedirectToAction("Index");
+
+            try
+            {
+                _dbContext.SaveChanges();
+            }
+            catch (DbEntityValidationException dbEx)
+            {
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        System.Console.WriteLine("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
+            }
+            
+            return View();
         }
 
         // GET: Search/Details/5

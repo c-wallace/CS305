@@ -8,7 +8,7 @@
 @using (Html.BeginForm())
 {
     <p>
-        Title: @Html.TextBox("SearchString") <br />
+        @Html.TextBox("SearchString")
         <input type="submit" value="search" class="tfbutton">
     </p>
 }
@@ -98,4 +98,8 @@ else
         </tbody>
     </table>
 }
+
+<p>
+    @Html.ActionLink("Add", "Add", "Search")
+</p>
 
