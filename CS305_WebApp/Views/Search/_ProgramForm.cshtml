@@ -1,0 +1,33 @@
+﻿@model CS305_WebApp.Models.ProgramModel
+<div class="form-group">
+    @Html.LabelFor(m => m.name, "Full Name", new { @class = "col-md-2 control-label" })
+
+    @Html.TextBoxFor(m => m.name, new { @class = "form-control" })
+
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.address, "Address", new { @class = "col-md-2 control-label" })
+
+    @Html.TextBoxFor(m => m.address, new { @class = "form-control" })
+
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.number, "Phone Number", new { @class = "col-md-2 control-label" })
+
+    @Html.EditorFor(m => m.number, new { @class = "form-control" })
+
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.webpage, "Web-Site", new { @class = "col-md-2 control-label" })
+
+    @Html.TextBoxFor(m => m.webpage, new { @class = "form-control" })
+
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.keyword, "Keyword", new { @class = "col-md-2 control-label" })
+
+    @Html.TextBoxFor(m => m.keyword, new { @class = "form-control" })
+
+</div>
+@Html.HiddenFor(m => m.ID)
+<input type="submit" class="btn btn-primary" value="Save" />

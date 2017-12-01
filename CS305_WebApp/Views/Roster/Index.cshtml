@@ -47,12 +47,9 @@
         }
     </tbody>
 </table>
-<!--<u1>
-    @foreach(var roster in Model)
-    {
-        <li>
-            @roster.Firstname @roster.Lastname @roster.description
-            @Html.ActionLink("Delete","Delete", new { id = roster.ID})
-        </li>
-    }
-</u1-->
+@using (Html.BeginForm("ExportToExcel", "Roster", FormMethod.Post))
+{
+    <input type="submit" value="Export" />
+}
+<!--@Html.ActionLink("Export Roster to excel", "ExportToExcel")-->
+

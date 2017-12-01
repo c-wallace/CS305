@@ -1,0 +1,51 @@
+﻿@model IEnumerable<CS305_WebApp.Models.ProgramModel>
+@{
+    ViewBag.Title = "ProgramView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ProgramView</h2>
+<table class="table table-striped table-hover">
+    <tbody>
+        <tr>
+            <th></th>
+            <th>
+                Program
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                Phone Number
+            </th>
+            <th>
+                Website
+            </th>
+        </tr>
+        @foreach (var program in Model)
+            {
+
+            <tr class="info">
+
+                <td>
+
+                    @Html.ActionLink("Edit", "Edit", new { id = program.ID }) |
+                    <!--, new { onClick = "retrun confirm('Are you sure you want to delete this user: "+ roster.Firstname +""+"');"}-->
+                    @Html.ActionLink("Delete", "DoDelete", new { id = program.ID }, new { onclick = "return confirm('Are you sure you want to delete this user: " + program.name + "" + "');" })
+                </td>
+                <td>
+                    @program.name
+                </td>
+                <td>
+                    @program.address
+                </td>
+                <td>
+                    @program.number
+                </td>
+                <td>
+                    @program.webpage
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -32,6 +32,11 @@ namespace CS305_WebApp.Controllers
 
             return View(pro);
         }
+        public ActionResult ProgramView()
+        {
+            var program = _dbContext.programs.ToList();
+            return View(program);
+        }
         [HttpGet]
         public ActionResult Search(string searchString)
         {
@@ -99,7 +104,12 @@ namespace CS305_WebApp.Controllers
         // GET: Search/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var program = _dbContext.programs.SingleOrDefault(v => v.ID == id);
+
+            if (program == null)
+                return HttpNotFound();
+
+            return View(program);
         }
 
         // POST: Search/Edit/5
@@ -117,11 +127,33 @@ namespace CS305_WebApp.Controllers
                 return View();
             }
         }
+        //Update database
+        [HttpPost]
+        public ActionResult Update(ProgramModel program)
+        {
+            var programInDb = _dbContext.programs.SingleOrDefault(v => v.ID == program.ID);
+
+            if (programInDb == null)
+                return HttpNotFound();
+
+            programInDb.name = program.name;
+            programInDb.address = program.address;
+            programInDb.number = program.number;
+            programInDb.webpage = program.webpage;
+            programInDb.keyword = program.keyword;
+            _dbContext.SaveChanges();
+
+            return RedirectToAction("ProgramView");
+        }
 
         // GET: Search/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var program = _dbContext.programs.SingleOrDefault(r => r.ID == id);
+
+            if (program == null)
+                return HttpNotFound();
+            return View(program);
         }
 
         // POST: Search/Delete/5
@@ -138,6 +170,16 @@ namespace CS305_WebApp.Controllers
             {
                 return View();
             }
+        }
+
+        public ActionResult DoDelete(int id)
+        {
+            var program = _dbContext.programs.SingleOrDefault(r => r.ID == id);
+            if (program == null)
+                return HttpNotFound();
+            _dbContext.programs.Remove(program);
+            _dbContext.SaveChanges();
+            return RedirectToAction("ProgramView");
         }
     }
 }

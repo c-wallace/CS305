@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using CS305_WebApp.Models;
+using System.IO;
+using System.Web.UI.WebControls;
+using System.Web.UI;
 
 namespace CS305_WebApp.Controllers
 {
@@ -133,6 +136,32 @@ namespace CS305_WebApp.Controllers
             _dbContext.Roster.Remove(roster);
             _dbContext.SaveChanges();
             return RedirectToAction("Index");
+        }
+        //Export to excel file
+        public void ExportToExcel()
+        {
+            var grid = new GridView();
+            StringWriter sw = new StringWriter();
+            grid.DataSource = from data in _dbContext.Roster.ToList()
+                              select new
+                              {
+                                  FirstName = data.Firstname,
+                                  LastName = data.Lastname,
+                                  Description = data.description
+                              };
+            grid.DataBind();
+
+            Response.ClearContent();
+            Response.AddHeader("content-disposition", "attachment; filename = ExportedRosterList.xls");
+            Response.ContentType = "application/excel";
+
+            HtmlTextWriter htmlTextWriter = new HtmlTextWriter(sw);
+
+            grid.RenderControl(htmlTextWriter);
+
+            Response.Write(sw.ToString());
+
+            Response.End();
         }
     }
 }

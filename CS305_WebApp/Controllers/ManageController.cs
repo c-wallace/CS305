@@ -338,31 +338,7 @@ namespace CS305_WebApp.Controllers
             base.Dispose(disposing);
         }
 
-        public void ExportToExcel()
-        {
-            var grid = new GridView();
-            StringWriter sw = new StringWriter();
-            grid.DataSource = from data in _dbContext.Roster.ToList()
-                              select new
-                              {
-                                  FirstName =  data.Firstname,
-                                  LastName =data.Lastname,
-                                  Description =data.description
-                              };
-            grid.DataBind();
-
-            Response.ClearContent();
-            Response.AddHeader("content-disposition", "attachment; filename = ExportedRosterList.xls");
-            Response.ContentType = "application/excel";
-
-            HtmlTextWriter htmlTextWriter = new HtmlTextWriter(sw);
-
-            grid.RenderControl(htmlTextWriter);
-
-            Response.Write(sw.ToString());
-
-            Response.End();
-        }
+       
         #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
