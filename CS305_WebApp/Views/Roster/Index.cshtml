@@ -23,10 +23,23 @@
                 Description
             </th>
         </tr>
+        @{
+            int i = 0;
+        }
         @foreach (var roster in Model)
         {
+            
+            string rowColor;
+            if (i % 2 == 0)
+            {
+                rowColor = "info";
+            }
+            else
+            {
+                rowColor = "active";
+            }
 
-            <tr class="info">
+            <tr class="@rowColor">
 
                 <td>
 
@@ -44,6 +57,7 @@
                     @roster.description
                 </td>
             </tr>
+            i++;
         }
     </tbody>
 </table>
@@ -51,5 +65,5 @@
 {
     <input type="submit" value="Export" />
 }
-<!--@Html.ActionLink("Export Roster to excel", "ExportToExcel")-->
+
 

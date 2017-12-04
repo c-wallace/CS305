@@ -2,25 +2,20 @@
 @{
     ViewBag.Title = "";
 }
-<h2>@ViewBag.Title</h2>
-<h3>@ViewBag.Message</h3>
 
+<h1 class="text-primary">
+    <strong>Search For Resources</strong>    
+</h1>
 <div class="jumbotron">
-    <p>This will essentially be the search page, the search screen will show up after a user or admin logs in</p>
-    <p>Right now the search bar just searches through google it will be linked to a database</p>
-    @using (Html.BeginForm("Index","Search", FormMethod.Get))
+    @using (Html.BeginForm("Index", "Search", FormMethod.Get))
     {
-        <p>
-            @Html.TextBox("SearchString")
-           <input type="submit" value="search" onclick="@("window.location.href='" + @Url.Action("Index", "Search") + "'");"  class="tfbutton">
-        </p>
+        <div class="tfheader">
+            <form class="tfnewsearch" method="get" action="@Url.Action("Search","Search")">
+                <input type="text" class="tftextinput" name="SearchString" size="21" maxlength="120"><input type="submit" value="search" onclick="@("window.location.href='" + @Url.Action("Index", "Search") + "'");" class="tfbutton">
+            </form>
+            <div class="tfclear"></div>
+        </div>
     }
-    
-<!--    <div class="tfheader">
-        <form class="tfnewsearch" method="get" action="http://www.google.com">
-            <input type="text" class="tftextinput" name="q" size="21" maxlength="120"><input type="submit" value="search" class="tfbutton">
-        </form>
-        <div class="tfclear"></div>
-    </div>-->
+
 </div>
 

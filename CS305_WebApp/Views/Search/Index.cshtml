@@ -7,10 +7,16 @@
 <h2>Index</h2>
 @using (Html.BeginForm())
 {
-    <p>
-        @Html.TextBox("SearchString")
-        <input type="submit" value="search" class="tfbutton">
-    </p>
+
+        <!--@Html.TextBox("SearchString")
+        <input type="submit" value="search" class="tfbutton">-->
+        <div class="tfheader2">
+            <form class="tfnewsearch" method="get" action="@Url.Action("Search","Search")">
+                <input type="text" class="tftextinput2" name="SearchString" size="21" maxlength="120"><input type="submit" value="search" onclick="@("window.location.href='" + @Url.Action("Index", "Search") + "'");" class="tfbutton">
+            </form>
+            <div class="tfclear"></div>
+        </div>
+    
 }
 @if (ViewContext.HttpContext.User.IsInRole("Admin"))
 {
