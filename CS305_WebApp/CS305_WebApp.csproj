@@ -279,6 +279,9 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\bigHands.png" />
+    <Content Include="Assets\bigLogo.jpg" />
+    <Content Include="Assets\bigPuzzle.png" />
     <Content Include="Content\bootstrap-spaceland.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -350,7 +353,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Assets\" />
     <Folder Include="Content\Images\" />
   </ItemGroup>
   <ItemGroup>
