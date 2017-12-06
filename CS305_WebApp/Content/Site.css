@@ -176,3 +176,7 @@ ul {
     list-style: none;
 }
 
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
