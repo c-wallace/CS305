@@ -279,9 +279,15 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\bigHands.png" />
-    <Content Include="Assets\bigLogo.jpg" />
-    <Content Include="Assets\bigPuzzle.png" />
+    <None Include="Assets\bigHands.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\bigLogo.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\bigPuzzle.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Content Include="Content\bootstrap-spaceland.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
