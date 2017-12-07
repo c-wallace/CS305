@@ -9,27 +9,27 @@
     @Html.ActionLink("List", "Index", "Roster")
 </p>
 
-@Html.ValidationSummary("", new { @class = "text-danger" })
+
 @using (Html.BeginForm("Add", "Roster", FormMethod.Post, new { @class = "form" }))
 {
+@Html.ValidationSummary("", new { @class = "text-danger" })
 <div class="form-group">
     @Html.LabelFor(m => m.Firstname,"First Name", new { @class = "col-md-2 control-label" })
     <div class="col-md-10">
-        @Html.TextBoxFor(m => m.Firstname, new { @class = "form-control" })
+        @Html.TextBoxFor(m => m.Firstname, new { @class = "form-control" , required="required"})
     </div>
 </div>
-<br />
+<p></p>
 <div class="form-group">
     @Html.LabelFor(m => m.Lastname,"Last Name", new { @class = "col-md-2 control-label" })
     <div class="col-md-10">
-        @Html.TextBoxFor(m => m.Lastname, new { @class = "form-control" })
+        @Html.TextBoxFor(m => m.Lastname, new { @class = "form-control", required = "required" })
     </div>
 </div>
-<br />
 <div class="form-group">
-    @Html.LabelFor(m => m.description,"Description", new { @class = "col-md-2 control-label" })
+    @Html.LabelFor(m => m.description,"Programs", new { @class = "col-md-2 control-label" })
     <div class="col-md-10">
-        @Html.TextBoxFor(m => m.description, new { @class = "form-control", rows=4 })
+        @Html.TextAreaFor(m => m.description, new { @class = "form-control", rows=4, required = "required" })
     </div>
 </div>
 

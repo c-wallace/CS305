@@ -1,21 +1,20 @@
 ﻿@model IEnumerable<CS305_WebApp.Models.ProgramModel>
 @{
-    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @using (Html.BeginForm())
 {
 
-        <!--@Html.TextBox("SearchString")
-        <input type="submit" value="search" class="tfbutton">-->
-        <div class="tfheader2">
-            <form class="tfnewsearch" method="get" action="@Url.Action("Search","Search")">
-                <input type="text" class="tftextinput2" name="SearchString" size="21" maxlength="120"><input type="submit" value="search" onclick="@("window.location.href='" + @Url.Action("Index", "Search") + "'");" class="tfbutton">
-            </form>
-            <div class="tfclear"></div>
-        </div>
-    
+    <!--@Html.TextBox("SearchString")
+    <input type="submit" value="search" class="tfbutton">-->
+    <div class="tfheader2">
+        <form class="tfnewsearch" method="get" action="@Url.Action("Search","Search")">
+            <input type="text" class="tftextinput2" name="SearchString" size="21" maxlength="120"><input type="submit" value="search" onclick="@("window.location.href='" + @Url.Action("Index", "Search") + "'");" class="tfbutton">
+        </form>
+        <div class="tfclear"></div>
+    </div>
+
 }
 @if (ViewContext.HttpContext.User.IsInRole("Admin"))
 {
@@ -38,7 +37,8 @@
             </tr>
             @foreach (var program in Model)
             {
-
+                if (program.keyword.Contains("food"))
+                {
                 <tr class="info">
 
                     <td>
@@ -60,6 +60,7 @@
                         <a href="@program.webpage">@program.webpage</a>
                     </td>
                 </tr>
+                }
             }
         </tbody>
     </table>
@@ -88,7 +89,8 @@ else
             </tr>
             @foreach (var program in Model)
             {
-
+                if (program.keyword.Contains("food"))
+                {
                 <tr class="info">
                     <td>
                         @program.name
@@ -103,9 +105,11 @@ else
                         <a href="@program.webpage">@program.webpage</a>
                     </td>
                 </tr>
+                }
             }
         </tbody>
     </table>
 }
+
 
 

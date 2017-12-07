@@ -3,19 +3,27 @@
     ViewBag.Title = "";
 }
 
-<h1 class="text-primary">
-    <strong>Search For Resources</strong>    
-</h1>
 <div class="jumbotron">
     @using (Html.BeginForm("Index", "Search", FormMethod.Get))
     {
+        <h1 class="text-primary">  
+            <strong>BigLittle Search Engine</strong>
+        </h1>
+        <br/>
         <div class="tfheader">
             <form class="tfnewsearch" method="get" action="@Url.Action("Search","Search")">
                 <input type="text" class="tftextinput" name="SearchString" size="21" maxlength="120"><input type="submit" value="search" onclick="@("window.location.href='" + @Url.Action("Index", "Search") + "'");" class="tfbutton">
             </form>
             <div class="tfclear"></div>
         </div>
+        
     }
-
+    <br/><br/>
+    <h4>Common Searches:</h4>
+    <div class="form-group">
+            @Html.ActionLink("Food >>", "FoodForm", "Search")
+            @Html.ActionLink("Housing >>", "Index", "Search")
+            @Html.ActionLink("Health >>", "Index", "Search")
+    </div>
 </div>
 

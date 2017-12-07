@@ -18,6 +18,11 @@ namespace CS305_WebApp.Controllers
         {
             _dbContext = new ApplicationDbContext();
         }
+        public ActionResult FoodForm()
+        {
+            var program = _dbContext.programs.ToList();
+            return View(program);
+        }
         public ActionResult Index(string searchString)
         {
             var pro = from p in _dbContext.programs
@@ -45,7 +50,7 @@ namespace CS305_WebApp.Controllers
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                pro = pro.Where(s => s.name.Contains(searchString));
+                pro = pro.Where(s => s.keyword.Contains(searchString));
             }
 
             return RedirectToAction("Index", pro);

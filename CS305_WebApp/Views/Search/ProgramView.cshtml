@@ -16,22 +16,33 @@
                 Address
             </th>
             <th>
-                Phone Number
+                Phone #
             </th>
             <th>
                 Website
             </th>
         </tr>
+        @{
+            int i = 0;
+        }
         @foreach (var program in Model)
+        {
+            string rowColor;
+            if (i % 2 == 0)
             {
-
-            <tr class="info">
+                rowColor = "info";
+            }
+            else
+            {
+                rowColor = "active";
+            }
+            <tr class="@rowColor">
 
                 <td>
 
-                    @Html.ActionLink("Edit", "Edit", new { id = program.ID }) |
+                    @Html.ActionLink("Edit", "Edit", new { id = program.ID }, new { @class = "btn-success btn-sm" })
                     <!--, new { onClick = "retrun confirm('Are you sure you want to delete this user: "+ roster.Firstname +""+"');"}-->
-                    @Html.ActionLink("Delete", "DoDelete", new { id = program.ID }, new { onclick = "return confirm('Are you sure you want to delete this user: " + program.name + "" + "');" })
+                    @Html.ActionLink("Delete", "DoDelete", new { id = program.ID }, new { onclick = "return confirm('Are you sure you want to delete this user: " + program.name + "" + "');", @class = "btn-danger btn-sm" })
                 </td>
                 <td>
                     @program.name
@@ -43,9 +54,10 @@
                     @program.number
                 </td>
                 <td>
-                    @program.webpage
+                  <a href="@program.webpage">@program.webpage</a>
                 </td>
             </tr>
+            i++;
         }
     </tbody>
 </table>

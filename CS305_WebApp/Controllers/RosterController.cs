@@ -26,10 +26,14 @@ namespace CS305_WebApp.Controllers
         }
 
         //Roster add method
+        [HttpPost]
         public ActionResult Add(RosterModel roster)
         {
-            _dbContext.Roster.Add(roster);
-            _dbContext.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                _dbContext.Roster.Add(roster);
+                _dbContext.SaveChanges();
+            }
             return RedirectToAction("Index");
         }
         // GET: Roster/Details/5

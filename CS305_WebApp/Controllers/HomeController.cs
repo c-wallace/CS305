@@ -12,7 +12,6 @@ namespace CS305_WebApp.Controllers
         {
             return View();
         }
-
         public ActionResult Search()
         {
             ViewBag.Message = "Your search page.";
@@ -26,7 +25,7 @@ namespace CS305_WebApp.Controllers
 
             return View();
         }
-        
+        [Authorize(Roles = "Admin")]
         public ActionResult Roster()
         {
             ViewBag.Message = "Your roster page.";

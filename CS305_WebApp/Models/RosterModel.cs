@@ -10,13 +10,13 @@ namespace CS305_WebApp.Models
     public class RosterModel
     {
         public int ID { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Last name is required")]
         [Display(Name = "Last Name")]
         public string Lastname { get; set; }
-        [Required]
+        [Required(ErrorMessage = "First name is required")]
         [Display(Name = "First Name")]
         public string Firstname { get; set; }
-        [Required]
+        [Required(ErrorMessage = "This field is required")]
         [Display(Name = "Description")]
         public string description { get; set; }
     }
