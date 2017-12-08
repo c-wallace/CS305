@@ -23,6 +23,16 @@ namespace CS305_WebApp.Controllers
             var program = _dbContext.programs.ToList();
             return View(program);
         }
+        public ActionResult HealthForm()
+        {
+            var program = _dbContext.programs.ToList();
+            return View(program);
+        }
+        public ActionResult HousingForm()
+        {
+            var program = _dbContext.programs.ToList();
+            return View(program);
+        }
         public ActionResult Index(string searchString)
         {
             var pro = from p in _dbContext.programs

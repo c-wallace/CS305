@@ -273,6 +273,10 @@
     <Compile Include="Migrations\201712070505139_requirement.Designer.cs">
       <DependentUpon>201712070505139_requirement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712072055325_programs and numbers.cs" />
+    <Compile Include="Migrations\201712072055325_programs and numbers.Designer.cs">
+      <DependentUpon>201712072055325_programs and numbers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ProgramModel.cs" />
@@ -361,6 +365,8 @@
     <Content Include="Views\Search\Edit.cshtml" />
     <Content Include="Views\Search\ProgramView.cshtml" />
     <Content Include="Views\Search\FoodForm.cshtml" />
+    <Content Include="Views\Search\HousingForm.cshtml" />
+    <Content Include="Views\Search\HealthForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -436,6 +442,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712070505139_requirement.resx">
       <DependentUpon>201712070505139_requirement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712072055325_programs and numbers.resx">
+      <DependentUpon>201712072055325_programs and numbers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
