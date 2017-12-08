@@ -277,6 +277,10 @@
     <Compile Include="Migrations\201712072055325_programs and numbers.Designer.cs">
       <DependentUpon>201712072055325_programs and numbers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712080352131_format.cs" />
+    <Compile Include="Migrations\201712080352131_format.Designer.cs">
+      <DependentUpon>201712080352131_format.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ProgramModel.cs" />
@@ -445,6 +449,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712072055325_programs and numbers.resx">
       <DependentUpon>201712072055325_programs and numbers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712080352131_format.resx">
+      <DependentUpon>201712080352131_format.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -56,7 +56,7 @@
                     @program.address
                 </td>
                 <td>
-                    @program.number
+                    @String.Format("{0:###-###-####}", double.Parse(program.number))
                 </td>
                 <td>
                   <a href="http://@program.webpage">@program.webpage</a>
