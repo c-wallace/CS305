@@ -35,11 +35,23 @@
                     Website
                 </th>
             </tr>
+            @{
+                int i = 0;
+            }
             @foreach (var program in Model)
             {
+                string rowColor;
+                if (i % 2 == 0)
+                {
+                    rowColor = "info";
+                }
+                else
+                {
+                    rowColor = "active";
+                }
                 if (program.keyword.Contains("food") || program.keyword.Contains("Food") || program.keyword.Contains("pantry"))
                 {
-                <tr class="info">
+                <tr class="@rowColor">
 
                     <td>
                         <div class="row">
@@ -65,6 +77,7 @@
                         <a href="http://@program.webpage">@program.webpage</a>
                     </td>
                 </tr>
+                    i++;
                 }
             }
         </tbody>
@@ -92,11 +105,23 @@ else
                     Website
                 </th>
             </tr>
+            @{
+                int i = 0;
+            }
             @foreach (var program in Model)
             {
+                string rowColor;
+                if (i % 2 == 0)
+                {
+                    rowColor = "info";
+                }
+                else
+                {
+                    rowColor = "active";
+                }
                 if (program.keyword.Contains("food") || program.keyword.Contains("Food") || program.keyword.Contains("pantry"))
                 {
-                <tr class="info">
+                <tr class="@rowColor">
                     <td>
                         @program.name
                     </td>
@@ -110,6 +135,7 @@ else
                         <a href="http://@program.webpage">@program.webpage</a>
                     </td>
                 </tr>
+                    i++;
                 }
             }
         </tbody>

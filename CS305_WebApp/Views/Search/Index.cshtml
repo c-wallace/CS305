@@ -36,10 +36,21 @@
                     Website
                 </th>
             </tr>
+            @{
+                int i = 0;
+            }
             @foreach (var program in Model)
             {
-
-                <tr class="info">
+                string rowColor;
+                if (i % 2 == 0)
+                {
+                    rowColor = "info";
+                }
+                else
+                {
+                    rowColor = "active";
+                }
+                <tr class="@rowColor">
 
                     <td>
                         <div class="row">
@@ -65,6 +76,7 @@
                         <a href="http://@program.webpage">@program.webpage</a>
                     </td>
                 </tr>
+                i++;
             }
         </tbody>
     </table>
@@ -91,10 +103,21 @@ else
                     Website
                 </th>
             </tr>
+            @{
+                int i = 0;
+            }
             @foreach (var program in Model)
             {
-
-                <tr class="info">
+                string rowColor;
+                if (i % 2 == 0)
+                {
+                    rowColor = "info";
+                }
+                else
+                {
+                    rowColor = "active";
+                }
+                <tr class="@rowColor">
                     <td>
                         @program.name
                     </td>
@@ -108,6 +131,7 @@ else
                         <a href="http://@program.webpage">@program.webpage</a>
                     </td>
                 </tr>
+                i++;
             }
         </tbody>
     </table>
